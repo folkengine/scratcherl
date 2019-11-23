@@ -7,8 +7,9 @@ defmodule Scratcherl.MixProject do
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
+      aliases: aliases(),
       deps: deps(),
-      aliases: aliases()
+      escript: escript()
     ]
   end
 
@@ -31,5 +32,9 @@ defmodule Scratcherl.MixProject do
     [
       trace: "mix test --trace"
     ]
+  end
+
+  defp escript do
+    [main_module: Scratcherl.CLI]
   end
 end
