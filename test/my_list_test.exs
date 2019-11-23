@@ -18,9 +18,15 @@ defmodule MyListTest do
     assert MyList.reduce([1, 2, 2], &sum/2) == 5
   end
 
-  test "sum with bad data" do
+  test "sum with bad data throws ArithmeticError" do
     assert_raise ArithmeticError, "bad argument in arithmetic expression", fn ->
       assert MyList.reduce([:asd, 2, 2], &sum/2) == 5
+    end
+  end
+
+  test "sum with weird data throws FunctionClauseError" do
+    assert_raise FunctionClauseError, "no function clause matching in MyList.reduce/2", fn ->
+      assert MyList.reduce(:asd, &sum/2) == 5
     end
   end
 end
