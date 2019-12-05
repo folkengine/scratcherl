@@ -26,6 +26,8 @@ defmodule Scratcherl do
     case {args} do
       {[]} ->
         0
+      {[_ | _]} ->
+        1
     end
   end
 end
