@@ -24,3 +24,4 @@ scratcherl-*.tar
 
 .idea/
 scratcherl
+*.iml
